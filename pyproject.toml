@@ -11,12 +11,7 @@ authors = [
 ]
 license = { text = "MIT" }
 dependencies = [
-    "langchain==0.3.14",
-    "boto3==1.36.2",
-    "ollama==0.4.6",
-    "PyPDF2==3.0.1",
-    "opensearch-py==2.8.0",
-    "sagemaker==2.235.2"
+    "FloTorch-core==2.0.0"
 ]
 
 [project.optional-dependencies]
