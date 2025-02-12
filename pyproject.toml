@@ -3,7 +3,7 @@ requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "FloTorch"
+name = "flotorch-indexer"
 version = "2.0.0"
 description = "A Python project for FloTorch"
 authors = [
