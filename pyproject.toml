@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "FloTorch"
+version = "2.0.0"
+description = "A Python project for FloTorch"
+authors = [
+    { name = "Shiva Krishna", email = "shiva.krishnaah@gmail.com" }
+]
+license = { text = "MIT" }
+dependencies = [
+    "langchain==0.3.14",
+    "boto3==1.36.2",
+    "ollama==0.4.6",
+    "PyPDF2==3.0.1",
+    "opensearch-py==2.8.0",
+    "sagemaker==2.235.2"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest==8.3.4", 
+    "testcontainers==4.9.0",
+    "minio==7.2.15",
+    "moto==5.0.27"
+    ]
+
+[tool.setuptools]
+# Slowly move the whole code to src so that on the higher level it looks clean
+# src = source code 
+# tests = Test code
+packages = { find = {} }  # Automatically finds all packages in your source.
+
+[tool.flake8]
+max-line-length = 88
