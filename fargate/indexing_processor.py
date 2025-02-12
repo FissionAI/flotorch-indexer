@@ -93,12 +93,19 @@ class IndexingProcessor(BaseFargateTaskProcessor):
             for embedding in embeddings_list.embeddings:
                 bulk_data.append({"index": {"_index": index_id}})
                 data = embedding.to_json()
+                # data['_index'] = index_id
+                data['execution_id'] = exp_config_data.get('execution_id')
+                if exp_config_data.get("chunking_strategy").lower() == 'hierarchical':
+                    data['parent_id'] = embedding.id
                 bulk_data.append(data)
+
             bulK_result = open_search_client.write_bulk(body=bulk_data)
+
             if bulK_result['errors']:
                 logger.error("Error during bulk indexing")
                 logger.error(f"Item 1: {json.dumps(bulK_result['items'][0])}")
                 raise Exception("Error during bulk indexing")
+            
             logger.info("opensearch bulk write completed")
             output = {"status": "success", "message": "Indexing completed successfully."}
             self.send_task_success(output)
