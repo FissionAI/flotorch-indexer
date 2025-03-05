@@ -31,24 +31,9 @@ class IndexingProcessor(BaseFargateTaskProcessor):
         try:
             exp_config_data = self.input_data
 
-            # exp_config_data = {
-            #     "kb_data": "file://C:/Projects/refactor/medical_abstracts_100_169kb.pdf",
-            #     "chunk_size": 256,
-            #     "chunk_overlap": 5,
-            #     "parent_chunk_size": 512,
-            #     "embedding_model": "huggingface-sentencesimilarity-bge-large-en-v1-5",
-            #     "aws_region": "us-east-1",
-            #     "chunking_strategy": "Fixed",
-            #     "experiment_id": "CK016M3Z",
-            #     "execution_id": "S2ROS",
-            #     "vector_dimension": 1024,
-            #     "embedding_service": "sagemaker",    # sagemaker/bedrock
-            # }
-
-
             logger.info(f"Into indexing processor. Processing event: {json.dumps(exp_config_data)}")
 
-            index_id = exp_config_data.get("index_id") # "local-index-1024"
+            index_id = exp_config_data.get("index_id")
 
             kb_data = exp_config_data.get("kb_data")
             storage = StorageProviderFactory.create_storage_provider(kb_data)
