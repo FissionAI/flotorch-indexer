@@ -10,16 +10,9 @@ COPY pyproject.toml .
 RUN pip install .
 
 # Copy the necessary files and directories
-COPY chunking/ chunking/
-COPY config/ config/
-COPY embedding/ embedding/
 COPY fargate/ fargate/
-COPY indexing/ indexing/
-COPY logger/ logger/
-COPY reader/ reader/
-COPY retriever/ retriever/
-COPY storage/ storage/
-COPY utils/ utils/
+COPY fargate/handler/indexing/ indexing/
+# COPY fargate/handler/retriever/ retriever/
 COPY fargate/handler/indexing/fargate_indexing_handler.py .
 
 # Set environment variables
