@@ -11,7 +11,7 @@ RUN pip install .
 
 # Copy the necessary files and directories
 COPY fargate/ fargate/
-COPY fargate/handler/indexing/ indexing/
+COPY indexing/ indexing/
 # COPY fargate/handler/retriever/ retriever/
 COPY fargate/handler/indexing/fargate_indexing_handler.py .
 
