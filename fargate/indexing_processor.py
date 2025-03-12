@@ -1,19 +1,19 @@
 import json
-from embedding.titanv2_embedding import TitanV2Embedding
-from embedding.titanv1_embedding import TitanV1Embedding
-from embedding.cohere_embedding import CohereEmbedding
-from embedding.bge_large_embedding import BGELargeEmbedding, BGEM3Embedding, GTEQwen2Embedding
+from flotorch_core.embedding.titanv2_embedding import TitanV2Embedding
+from flotorch_core.embedding.titanv1_embedding import TitanV1Embedding
+from flotorch_core.embedding.cohere_embedding import CohereEmbedding
+from flotorch_core.embedding.bge_large_embedding import BGELargeEmbedding, BGEM3Embedding, GTEQwen2Embedding
 from fargate.base_task_processor import BaseFargateTaskProcessor
-from logger.global_logger import get_logger
-from reader.pdf_reader import PDFReader
-from storage.db.dynamodb import DynamoDB
-from storage.db.vector import OpenSearchClient
+from flotorch_core.logger.global_logger import get_logger
+from flotorch_core.reader.pdf_reader import PDFReader
+from flotorch_core.storage.db.dynamodb import DynamoDB
+from flotorch_core.storage.db.vector import OpenSearchClient
 from indexing.indexing import Index
-from config.config import Config
-from config.env_config_provider import EnvConfigProvider
-from storage.storage_provider_factory import StorageProviderFactory
-from embedding.embedding_registry import embedding_registry
-from chunking.chunking_provider_factory import ChunkingFactory
+from flotorch_core.config.config import Config
+from flotorch_core.config.env_config_provider import EnvConfigProvider
+from flotorch_core.storage.storage_provider_factory import StorageProviderFactory
+from flotorch_core.embedding.embedding_registry import embedding_registry
+from flotorch_core.chunking.chunking_provider_factory import ChunkingFactory
 
 
 
