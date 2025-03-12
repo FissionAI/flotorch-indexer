@@ -1,6 +1,6 @@
-from chunking.chunking import BaseChunker
-from embedding.embedding import BaseEmbedding, EmbeddingList
-from reader.pdf_reader import PDFReader
+from flotorch_core.chunking.chunking import BaseChunker
+from flotorch_core.embedding.embedding import BaseEmbedding, EmbeddingList
+from flotorch_core.reader.pdf_reader import PDFReader
 
 
 class Index:
